@@ -23,6 +23,8 @@ interface Favorito{
 })
 export class DinamicosComponent implements OnInit {
 
+  nuevoJuego: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -30,6 +32,20 @@ export class DinamicosComponent implements OnInit {
 
   guardar(){
     console.log('dsfds');
+  }
+
+  eliminar(index:number){
+    this.persona.favoritos.splice(index,1);
+  }
+
+  agregarJuego(){
+    // obs: los ids son en realidad de la base de datos
+    const nuevoFavorito: Favorito = {
+      id: this.persona.favoritos.length + 1,
+      nombre: this.nuevoJuego
+    }
+    this.persona.favoritos.push(nuevoFavorito);
+    this.nuevoJuego = '';
   }
 
 

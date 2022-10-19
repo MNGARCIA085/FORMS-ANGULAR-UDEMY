@@ -42,8 +42,19 @@
                     <div class="input-group">
                         <input type="text"
                             class="form-control"
+                            [(ngModel)]="nuevoJuego"
+                            name="nuevoJuego"
+                            (keyup.enter)="agregarJuego()"
                             placeholder="Agregar favorito">
-                            <button class="btn btn-outline-primary" type="button">Agregar</button>
+                            
+                            
+                            
+                            
+                            <button class="btn btn-outline-primary" 
+                                    (click)="agregarJuego()"
+                                    type="button">
+                                    Agregar
+                            </button>
                     </div>
 
                 </div>
@@ -56,10 +67,23 @@
                 <label class="col-sm-3 col-form-label">Listado de favoritos</label>
                 <div class="col-sm-9">
 
-                    <input *ngFor="let juego of persona.favoritos; let i = index" 
-                            [ngModel]="juego.nombre"
+                    <div class="input-group mb-1" 
+                            *ngFor="let juego of persona.favoritos; let i = index" >
+                        
+                        <input 
+                            [(ngModel)]="juego.nombre"
                             name="favorito_{{i}}"
-                            class="form-control-b-1">
+                            class="form-control">
+
+
+                        <button type="button" class="btn btn-danger"
+                                (click)="eliminar(i)">
+                            Eliminar
+                        </button>
+
+                    </div>
+
+                    
                     
                 </div>
             </div>
@@ -86,6 +110,13 @@
     </div>
 </div>
 
+
+
+
+
+
+<span>Persona</span>
+<pre>{{persona | json}}</pre>
 
 
 
