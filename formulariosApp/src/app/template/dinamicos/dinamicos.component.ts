@@ -1,5 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
+
+interface Persona{
+  nombre:string,
+  favoritos:Favorito[]
+}
+
+interface Favorito{
+  id:number,
+  nombre:string
+}
+
+
+
+
 @Component({
   selector: 'app-dinamicos',
   templateUrl: './dinamicos.component.html',
@@ -11,5 +27,19 @@ export class DinamicosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  guardar(){
+    console.log('dsfds');
+  }
+
+
+  persona: Persona = 
+              { 'nombre': 'Marcos',
+                'favoritos': [
+                        {id:1, 'nombre':'death note'},
+                        {id:1, 'nombre':'spy x family'},
+                ]
+              }
+  
 
 }
