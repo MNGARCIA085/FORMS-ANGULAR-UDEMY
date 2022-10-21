@@ -30,10 +30,11 @@
                         formControlName="email"
                         placeholder="Email">
 
-                        <span class="form-text text-danger"
-                                *ngIf="campoNoValido('email')">
-                            Debe tener el formato de email
-                        </span>
+                    <span class="form-text text-danger"
+                           *ngIf="campoNoValido('email')">
+                        {{ emailErrorMsg }}
+                    </span>
+                
                 </div>
             </div>
 
@@ -92,6 +93,7 @@
                 <div class="col">
                     <button type="submit" 
                         (click)="submitFormulario()"
+                        [disabled]="miFormulario.pending"
                         class="btn btn-primary float-end">
                         Guardar
                     </button>
@@ -113,6 +115,9 @@
 <div>
     Valid: {{miFormulario.valid}} <br> <br>
 
+    Status: {{miFormulario.status}} <br> <br>
+
+
 
     Errores globales: {{miFormulario.errors | json}} 
     <br>
@@ -120,4 +125,9 @@
     Errores en el nombre: {{miFormulario.controls['nombre']?.errors | json}} <br> <br>
     Errores en el email: {{miFormulario.controls['email']?.errors | json}} <br>
     Errores en el username: {{miFormulario.controls['username']?.errors | json}}
+
+
+    <br>
+    Errores en el username: {{miFormulario.controls['email']?.errors | json}}
+
 </div>
