@@ -9,7 +9,8 @@ Template and reactive forms
 
 - Clone the repo
 - Server
-    *Install json-server
+
+Install json-server
 
 ...$ cd server
 
@@ -29,3 +30,11 @@ Install dependencies and start the client.
 <hr>
 
 Go to localhost:4200
+
+
+* Item 1
+* Item 2
+* Item 3
+    * Item 3a
+    * Item 3b
+    * Item 3c
