@@ -27,5 +27,6 @@ Install dependencies and start the client.
 
 ....client$ ng serve
 
+<hr>
 
 Go to localhost:4200
