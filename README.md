@@ -9,8 +9,7 @@ Template and reactive forms
 
 - Clone the repo
 - Server
-
-Install json-server
+    *Install json-server
 
 ...$ cd server
 
